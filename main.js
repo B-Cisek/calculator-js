@@ -11,8 +11,8 @@ let result = '';
 
 
 function displayNumbers () {
-    if(this.textContent === '.' && currentNumber.innerHTML.includes('.')) return;
-    if(this.textContent === '.' && currentNumber.innerHTML === '') return currentNumber.innerHTML = '0.'
+    if (this.textContent === '.' && currentNumber.innerHTML.includes('.')) return;
+    if (this.textContent === '.' && currentNumber.innerHTML === '') return currentNumber.innerHTML = '0.'
 
     currentNumber.innerHTML += this.textContent;
 }
@@ -24,8 +24,16 @@ function clearScreen(){
     mathSign.innerHTML = '';
 }
 
+
+function divideByZeroInfo(){
+    result = 'You cannot divide by zero';
+    currentNumber.innerHTML = '';
+    previousNumber.innerHTML = '';
+    mathSign.innerHTML = '';
+}
+
 function operate () {
-    if(currentNumber.innerHTML === '' && this.textContent ==='-'){
+    if (currentNumber.innerHTML === '' && this.textContent ==='-'){
         currentNumber.innerHTML = '-';
         return;
     }
@@ -34,6 +42,8 @@ function operate () {
      else if (currentNumber.innerHTML === '') {
         return;
      }
+
+     if (currentNumber.innerHTML === '-') return;
 
      if(mathSign.innerHTML !== '') {
          showResult();
@@ -52,29 +62,34 @@ function showResult () {
             mathSign.innerHTML = '';
         }
             
-    if(previousNumber.innerHTML === '' || currentNumber.innerHTML === '') return;
+    if (previousNumber.innerHTML === '' || currentNumber.innerHTML === '') return;
 
-    let a = Number(currentNumber.innerHTML);
-    let b = Number(previousNumber.innerHTML);
+    let a = Number(currentNumber.innerText);
+    let b = Number(previousNumber.innerText);
     let operator = mathSign.innerHTML;
 
 
     switch(operator) {
         case '+':
-        result = a + b;
-        break;
+            result = a + b;
+            break;
         case '-':
-        result = b - a;
-        break;
+            result = b - a;
+            break;
         case '*':
-        result = a * b;
-        break;
+            result = a * b;
+            break;
         case ':':
-        result = b / a;
-        break;
-        case 'x2':
-        result = b ** a;
-        break;
+            if (a === 0){
+                result = 'You cannot divide by zero';
+                break;
+            } else {
+                result = b / a;
+                break;
+            }
+        case 'xx':
+            result = b ** a;
+            break;
     }
 
     addToHistory();

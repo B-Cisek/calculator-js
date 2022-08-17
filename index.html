@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"/>
     <script src="./main.js" defer></script>
     <title>Calculator</title>
 </head>
@@ -24,7 +25,7 @@
             </div>
             <div class="panel">
                 <button class="clear">C</button>
-                <button class="operator">x2</button>
+                <button class="operator">x<sup>x</sup></button>
                 <button class="operator">:</button>
                 <button class="operator">*</button>
                 <button class="number">7</button>
@@ -46,9 +47,11 @@
         </div>
         <div class="calculator-history">
             <p class="history-title">Last Calculations</p>
-            <button class="history-btn active">Clear History</button>
+            <button class="history-btn">Clear History</button>
             <hr>
-            <ul class="history"></ul>
+            <div class="history-wrapper">
+                <ul class="history"></ul>
+            </div>
         </div>
     </main>
 </body>

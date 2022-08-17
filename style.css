@@ -26,9 +26,6 @@ main {
     display: flex;
     border-radius: 10px;
     background-color: transparent;
-    /* -webkit-box-shadow: 0px 0px 34px 8px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 0px 0px 34px 8px rgba(66, 68, 90, 1);
-    box-shadow: 0px 0px 34px 8px rgba(66, 68, 90, 1); */
 }
 
 .calculator {
@@ -82,7 +79,7 @@ main {
 
 .panel button {
     font-size: 25px;
-    background-color: #363A4E;
+    background-color: #363a4ef5;
     color: #fff;
     cursor: pointer;
     border: none;
@@ -112,7 +109,7 @@ button:hover {
 }
 
 .calculator-history hr {
-    width: 100%;
+    width: 80%;
 }
 
 .history-title {
@@ -123,7 +120,7 @@ button:hover {
 }
 
 .history-btn {
-    font-size: 20px;
+    font-size: 19px;
     background-color: #363A4E;
     color: #fff;
     cursor: pointer;
@@ -140,14 +137,42 @@ button:hover {
     color: #fff;
     font-weight: 700;
     padding: 0;
+    
+}
+
+.history-wrapper {
+    width: 100%;
+    text-align: center;
+    overflow: auto;
 }
 
 .history-item {
-    margin: 8px 0;
-    letter-spacing: 1px;
+    padding: 0 10px;
+    margin-top: 10px;
 }
 
 .active {
     display: inline-block;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #1f2231;
+    border-radius: 10px;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2D3146;
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
